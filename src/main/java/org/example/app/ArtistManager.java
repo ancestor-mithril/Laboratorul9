@@ -26,25 +26,19 @@ public class ArtistManager {
         album1.setName(new Faker().funnyName().name());
         album1.setReleaseYear((long) 2019);
         album1.setArtistId((long) 1);
-        //album1.setArtistsByArtistId(artist1);
-//        List<Album> albums=new ArrayList<>();
-//        albums.add(album1);
-//
+
         ArtistRepository artistRepository=new ArtistRepository();
-//        artistRepository.create(artist1);
-//
-//        PersistanceUtil.getInstance().setEntityManagerFactory();
-        AlbumRepository albumRepository=new AlbumRepository();
-        //albumRepository.create(album1);
+       artistRepository.create(artist1);
+
         PersistanceUtil.getInstance().setEntityManagerFactory();
-        Album album = albumRepository.findById(1);
+        AlbumRepository albumRepository=new AlbumRepository();
+        albumRepository.create(album1);
+        PersistanceUtil.getInstance().setEntityManagerFactory();
+        //Album album = albumRepository.findById(1);        //daca aceasta linie este documentata oracle da fail pentru ca nu este compatibil cu acest framework
+        //in concluzie: schimbam frameworkul, sau folosim sql din Oracle si nu un middle-man
 
         //https://www.ibm.com/support/pages/error-message-javasqlsqlexception-ora-00933-sql-command-not-properly-ended-appears-when-using-alias-select-statement
 
 
-        //Artist artist = ArtistRepository.findById((long) 1);
-//        List<Album> artists=albumRepository.findByName("Winnie Bago");
-//        for (Album album: artists)
-//            System.out.println(album.getName());
     }
 }
