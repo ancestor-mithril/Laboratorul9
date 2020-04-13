@@ -13,6 +13,10 @@ import java.util.List;
 
 
 public class App {
+    /**
+     * main function
+     * @param args
+     */
     public static void main(String[] args) {
         ArtistManager a=new ArtistManager();
         a.doStuff();

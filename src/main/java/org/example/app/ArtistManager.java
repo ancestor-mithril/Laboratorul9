@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistManager {
+    /**
+     * initializam niste artisti si niste albume si le introducem in db
+     */
     public void doStuff(){
         PersistanceUtil.getInstance().setEntityManagerFactory();
         Artist artist1=new Artist();

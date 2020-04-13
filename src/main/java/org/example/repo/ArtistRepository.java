@@ -16,7 +16,10 @@ import java.util.List;
 
 
 public class ArtistRepository {
-
+    /**
+     * adaugam in DB un artist
+     * @param artist
+     */
     public void create(Artist artist) {
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
@@ -27,23 +30,27 @@ public class ArtistRepository {
         em.close();
         emf.close();
     }
-//    public Artist findById(long id){
-//        EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
-//        EntityManager em=emf.createEntityManager();
-//        em.getTransaction().begin();
-//        Artist artist=em.find(Artist.class, id);
-//        em.getTransaction().commit();
-//        return artist;
-//    }
-    public static Artist findById (Long e){
-        EntityManager em = Persistence.createEntityManagerFactory("MusicAlbumPU").createEntityManager();
+
+    /**
+     * cautam un artist dupa ID
+     * @param id
+     * @return
+     */
+    public Artist findById(long id){
+        EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
+        EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        Artist al = em.find(Artist.class, e);
+        Artist artist=em.find(Artist.class, id);
         em.getTransaction().commit();
-        em.close();
-        return al;
+        return artist;
     }
 
+
+    /**
+     * cautam un artist dupa nume
+     * @param name
+     * @return
+     */
     public List<Artist> findByName(String name) {
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();

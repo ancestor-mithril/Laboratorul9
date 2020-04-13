@@ -11,6 +11,10 @@ import javax.persistence.Query;
 import java.util.List;
 
 public class AlbumRepository {
+    /**
+     * introducem in DB un album
+     * @param album
+     */
     public void create(Album album) {
         EntityManagerFactory emf= PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
@@ -21,13 +25,24 @@ public class AlbumRepository {
         em.close();
         emf.close();
     }
-    public static Album findById(long id){
+
+    /**
+     * cautam dupa id un album
+     * @param id
+     * @return
+     */
+    public  Album findById(long id){
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
         Album album=em.find(Album.class, id);
         return album;
     }
 
+    /**
+     * cautam o lista de albume dupa nume
+     * @param name
+     * @return
+     */
     public List<Album> findByName(String name) {
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
@@ -38,6 +53,11 @@ public class AlbumRepository {
         return query.getResultList();
     }
 
+    /**
+     * cautam un album dupa id-ul artistului
+     * @param artist
+     * @return
+     */
     public List<Artist> findByArtist(Artist artist) {
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
