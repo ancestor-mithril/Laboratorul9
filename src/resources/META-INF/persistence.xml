@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+          http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="MusicAlbumPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.example.entity.Albums</class>
+        <class>org.example.entity.Artists</class>
+        <class>org.example.entity.Album</class>
+        <class>org.example.entity.Artist</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:dbname" />
+            <property name="javax.persistence.jdbc.user" value="dbb" />
+            <property name="javax.persistence.jdbc.password" value="sql" />
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle8iDialect" />
+            <property name="toplink.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="toplink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.OracleDriver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="eclipselink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,5 @@
+org\example\repo\AlbumRepository.class
+org\example\entity\Albums.class
+org\example\util\PersistanceUtil.class
+org\example\entity\Artists.class
+org\example\repo\ArtistRepository.class
