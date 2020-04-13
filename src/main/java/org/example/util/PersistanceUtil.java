@@ -6,7 +6,7 @@ import javax.persistence.PersistenceUtil;
 
 public class PersistanceUtil {
     private static PersistanceUtil instance;
-    EntityManagerFactory obj;
+    static EntityManagerFactory obj;
 
     /**
      * constructorul este privat

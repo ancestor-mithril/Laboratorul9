@@ -35,9 +35,12 @@ public class ArtistManager {
 //
 //        PersistanceUtil.getInstance().setEntityManagerFactory();
         AlbumRepository albumRepository=new AlbumRepository();
-        albumRepository.create(album1);
+        //albumRepository.create(album1);
         PersistanceUtil.getInstance().setEntityManagerFactory();
-        //Album album = AlbumRepository.findById(1);
+        Album album = albumRepository.findById(1);
+
+        //https://www.ibm.com/support/pages/error-message-javasqlsqlexception-ora-00933-sql-command-not-properly-ended-appears-when-using-alias-select-statement
+
 
         //Artist artist = ArtistRepository.findById((long) 1);
 //        List<Album> artists=albumRepository.findByName("Winnie Bago");

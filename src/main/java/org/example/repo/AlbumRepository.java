@@ -55,15 +55,15 @@ public class AlbumRepository {
 
     /**
      * cautam un album dupa id-ul artistului
-     * @param artist
+     * @param id
      * @return
      */
-    public List<Artist> findByArtist(Artist artist) {
+    public List<Artist> findByArtist(long id) {
         EntityManagerFactory emf=PersistanceUtil.getInstance().getEntityManagerFactory();
         EntityManager em=emf.createEntityManager();
         Query query = em.createQuery(
                 "SELECT p FROM Album p WHERE p.artistId = :personName")
-                .setParameter("personName", artist)
+                .setParameter("personName", id)
                 .setMaxResults(10);
         return query.getResultList();
     }
